@@ -7,7 +7,10 @@ import numpy
 
 # initialize
 total_votes = 0
-candidate_options = [] # new list
+#new list
+candidate_options = []
+# new dict
+candidate_votes = {} 
 
 # 1. Open the data file.
 file_to_load = os.path.join("Resources","election_results.csv")
@@ -37,12 +40,19 @@ with open(file_to_load) as election_data:
         candidate_name = row[2]
         #check if name is not in the output list
         if candidate_name not in candidate_options:
+            #if not in list, add to list
             candidate_options.append(candidate_name)
+            #if not in list, add candidate name as a dict key and add count
+            candidate_votes[candidate_name] = 0
+        
+        #add vote for candidate dict in row
+        candidate_votes[candidate_name] += 1
 
 
 
 
-print(candidate_options)
+
+print(candidate_votes)
 print(total_votes)
 
 
