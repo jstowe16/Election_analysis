@@ -2,12 +2,12 @@
 # import libraries
 import os
 import csv
-import random
-import numpy
+# import random
+# import numpy
 
 # initialize
 total_votes = 0
-#new list
+# new list
 candidate_options = []
 # new dict
 candidate_votes = {} 
@@ -22,7 +22,7 @@ file_to_load = os.path.join("Resources","election_results.csv")
 # Use method that uses CSV module for improved reading
 with open(file_to_load) as election_data:
 
-    print(election_data)
+    # print(election_data)
     
     # CSV reader specifies delimiter and variable that holds contents
     file_reader = csv.reader(election_data, delimiter=',')
