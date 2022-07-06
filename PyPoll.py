@@ -11,6 +11,10 @@ total_votes = 0
 candidate_options = []
 # new dict
 candidate_votes = {} 
+# Winning Candidate and Winning Count Tracker
+winning_candidate = ""
+winning_count = 0
+winning_percentage = 0
 
 # 1. Open the data file.
 file_to_load = os.path.join("Resources","election_results.csv")
@@ -29,7 +33,7 @@ with open(file_to_load) as election_data:
     
     # Read the header row first, store it and print it
     headers = next(file_reader)
-    print(f"{headers}")
+    # print(f"{headers}")
 
     # total number of votes cast, number of entries?
     for row in file_reader:
@@ -48,12 +52,36 @@ with open(file_to_load) as election_data:
         #add vote for candidate dict in row
         candidate_votes[candidate_name] += 1
 
+    # iterate the candidate list
+    for candidate_name in candidate_votes:
+        #get total votes for a candidate
+        votes = candidate_votes[candidate_name]
+        #calc the % of total
+        vote_percentage = float(votes) / float(total_votes)*100
+        #output the name and % of total vote
+        print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+        
+        # Determine if the votes is greater than the winning count.
+        # continuous tracking/changing of winner instead of outside for loop
+        if (votes > winning_count) and (vote_percentage > winning_percentage):
+            # If true then set winning_count = votes and winning_percent =
+            # vote_percentage.
+            winning_count = votes
+            winning_percentage = vote_percentage
+            # And, set the winning_candidate equal to the candidate's name.
+            winning_candidate = candidate_name
 
+    #summarize winner
+    winning_candidate_summary = (
+        f"-------------------------\n"
+        f"Winner: {winning_candidate}\n"
+        f"Winning Vote Count: {winning_count:,}\n"
+        f"Winning Percentage: {winning_percentage:.1f}%\n"
+        f"-------------------------\n")
+    print(winning_candidate_summary)
 
-
-
-print(candidate_votes)
-print(total_votes)
+#print(candidate_votes)
+#print(total_votes)
 
 
 
