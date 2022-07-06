@@ -5,6 +5,10 @@ import csv
 import random
 import numpy
 
+# initialize
+total_votes = 0
+candidate_options = [] # new list
+
 # 1. Open the data file.
 file_to_load = os.path.join("Resources","election_results.csv")
 
@@ -23,6 +27,24 @@ with open(file_to_load) as election_data:
     # Read the header row first, store it and print it
     headers = next(file_reader)
     print(f"{headers}")
+
+    # total number of votes cast, number of entries?
+    for row in file_reader:
+        #count total votes by couting each list
+        total_votes = total_votes + 1
+
+        # get candidate from each list, add to output list
+        candidate_name = row[2]
+        #check if name is not in the output list
+        if candidate_name not in candidate_options:
+            candidate_options.append(candidate_name)
+
+
+
+
+print(candidate_options)
+print(total_votes)
+
 
 
 
