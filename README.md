@@ -16,5 +16,9 @@ The Colorado Board of Elections (CBE) requested the a recent local congressional
 To avoid data duplication and transcription errors, the results are summarized in the file [here](analysis/election_analysis.txt). This file is the direct output of the election audit analysis.
 
 ## Challenge Overview
+After auditing the election results, CBE requested the county-based analysis be added to the output. The additional analysis completed summarizes the voter turnout for each reporting county, as well as the county with the larget total turnout. 
 
 ## Challenge Summary
+To avoid data duplication and transcription errors, the results of both the initial audit and county-based data are in the file [here](analysis/election_analysis_challenge.txt). This file is the direct output of the election audit and county-based analysis. Additionally, the output is provided in the image below. 
+
+(/Resources/Election_results.png)
