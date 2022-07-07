@@ -58,8 +58,12 @@ with open(file_to_load) as election_data:
     with open(file_to_save, "w") as txt_file:
         # Write header for file
         txt_file.write("Election Results\n----------\n")
+        # print header for cmd line
+        print("Election Results\n----------\n")
         #write total votes
         txt_file.write(f"Total Votes: {total_votes:,}\n----------\n")
+        # print total votes to cmd line
+        print(f"Total Votes: {total_votes:,}\n----------\n")
         
         # iterate the candidate list
         for candidate_name in candidate_votes:
@@ -68,7 +72,7 @@ with open(file_to_load) as election_data:
             #calc the % of total
             vote_percentage = float(votes) / float(total_votes)*100
             #output the name and % of total vote
-            #print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
+            print(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
             # write each candidate results
             txt_file.write(f"{candidate_name}: {vote_percentage:.1f}% ({votes:,})\n")
 
@@ -99,3 +103,11 @@ with open(file_to_load) as election_data:
 
 #print(candidate_votes)
 #print(total_votes)
+
+
+# voter turnout for each county
+
+# percentage of votes from each county out of the total count
+
+# county with the highest turnout
+
