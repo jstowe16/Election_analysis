@@ -21,4 +21,4 @@ After auditing the election results, CBE requested the county-based analysis be 
 ## Challenge Summary
 To avoid data duplication and transcription errors, the results of both the initial audit and county-based data are in the file [here](analysis/election_analysis_challenge.txt). This file is the direct output of the election audit and county-based analysis. Additionally, the output is provided in the image below. 
 
-(/Resources/Election_results.png)
+![image](/Resources/Election_results.png)
